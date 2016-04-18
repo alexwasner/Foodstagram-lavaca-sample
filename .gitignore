@@ -22,7 +22,7 @@
 
 */cordova/www
 
-*/node_modules
+**/*/node_modules
 */docs
 */doc
 */pkg
