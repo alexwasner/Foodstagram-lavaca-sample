@@ -1,0 +1,54 @@
+.view.profile{
+	.overflow-scroll{
+		.absolute(0,0,@tabHeight,0);
+		.overflow-scroll-inner{
+			padding-top:@headerHeight;
+			padding-bottom: 1rem;
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	}
+	.upper-area{
+		padding:1rem;
+		flex-wrap:nowrap;
+		align-items:center;
+		h1{
+			padding-left:1rem;
+			font-size: 1rem;
+		}
+		.stats{
+			width: 70%;
+			display: flex;
+			justify-content: space-around;
+			text-align: center;
+			align-items:center;
+			span{
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
+			h2{
+				color:#aaa;
+				font-size: 1rem;
+			}
+		}
+	}
+	section{
+		display: flex;
+		flex-wrap: wrap;
+		.food-image{
+			width: 33.33333%;
+			padding-bottom : 33.33333%;
+			@media screen and (min-width:@desktopSize){
+				width: 25%;
+				padding-bottom : 25%;
+			}
+			background:#eee center center no-repeat;
+			background-size:cover;
+			border-bottom:1px solid white;
+			&:nth-child(3n-1){
+				border-left:1px solid white;
+				border-right:1px solid white;
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+.clearfix {
+  zoom: 1; 
+  display: inline-block; 
+  display: block;
+  &:after {
+    display: block; 
+    visibility: hidden; 
+    height: 0; 
+    clear: both; 
+    content: "";
+  }
+}
+.absolute (@top: 0, @right: 0, @bottom: 0, @left: 0) {
+  position: absolute;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+.border-radius(@val) {
+  .border-radius-sides(@val, @val, @val, @val);
+}
+
+
+.border-radius-sides(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  -moz-background-clip: padding; 
+  -webkit-background-clip: padding-box; 
+  background-clip: padding-box;
+}
+
+
+.vertical-shadow (@leftOpacity: 0, @rightOpacity: 0.2) {
+  background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(0,0,0,@leftOpacity)), to(rgba(0,0,0,@rightOpacity)));
+  background: -moz-gradient(linear, 0% 0%, 100% 0%, from(rgba(0,0,0,@leftOpacity)), to(rgba(0,0,0,@rightOpacity)));
+  background: -ms-gradient(linear, 0% 0%, 100% 0%, from(rgba(0,0,0,@leftOpacity)), to(rgba(0,0,0,@rightOpacity)));
+  background: -o-gradient(linear, 0% 0%, 100% 0%, from(rgba(0,0,0,@leftOpacity)), to(rgba(0,0,0,@rightOpacity)));
+  background: gradient(linear, 0% 0%, 100% 0%, from(rgba(0,0,0,@leftOpacity)), to(rgba(0,0,0,@rightOpacity)));
+}
+
+.horizontal-gradient (@topColor, @bottomColor) {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@topColor), to(@bottomColor));
+  background: -moz-gradient(linear, 0% 0%, 0% 100%, from(@topColor), to(@bottomColor));
+  background: -ms-gradient(linear, 0% 0%, 0% 100%, from(@topColor), to(@bottomColor));
+  background: -o-gradient(linear, 0% 0%, 0% 100%, from(@topColor), to(@bottomColor));
+  background: gradient(linear, 0% 0%, 0% 100%, from(@topColor), to(@bottomColor));
+}
+
+.vertical-gradient (@topColor, @bottomColor) {
+  background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(@topColor), to(@bottomColor));
+  background: -moz-gradient(linear, 0% 0%, 100% 0%, from(@topColor), to(@bottomColor));
+  background: -ms-gradient(linear, 0% 0%, 100% 0%, from(@topColor), to(@bottomColor));
+  background: -o-gradient(linear, 0% 0%, 100% 0%, from(@topColor), to(@bottomColor));
+  background: gradient(linear, 0% 0%, 100% 0%, from(@topColor), to(@bottomColor));
+}
+
+.gradient(@from, @to, @fromColor, @toColor) {
+  background: -webkit-gradient(linear, @from, @to, from(@fromColor), to(@toColor));
+  background: -moz-gradient(linear, @from, @to, from(@fromColor), to(@toColor));
+  background: -ms-gradient(linear, @from, @to, from(@fromColor), to(@toColor));
+  background: -o-gradient(linear, @from, @to, from(@fromColor), to(@toColor));
+  background: gradient(linear, @from, @to, from(@fromColor), to(@toColor));
+}

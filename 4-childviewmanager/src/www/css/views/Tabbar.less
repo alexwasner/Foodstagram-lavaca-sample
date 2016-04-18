@@ -1,0 +1,43 @@
+.tabbar{
+	.absolute(initial,0,0,0);
+	height:@tabHeight;
+	display:flex;
+	z-index: 100;
+	justify-content: space-between;
+	align-items: stretch;
+	.tab-item{
+		display:flex;
+		align-items:center;
+		background:#3A3838;
+		flex:1;
+		i{
+			flex:1;
+			height:24px;
+			width:30px;
+			opacity: 0.7;
+		}
+		&.selected i{
+			opacity: 1;
+		}
+		&[data-item="camera"]{
+			background:@red;
+			i{
+				background:url('../assets/img/camera.svg') center center no-repeat;
+				background-size:contain;
+				opacity: 1;
+			}
+		}
+		&[data-item="food"] i{
+			background:url('../assets/img/home.svg') center center no-repeat;
+			background-size:contain;
+		}
+		&[data-item="profile"] i{
+			background:url('../assets/img/profile.svg') center center no-repeat;
+			background-size:contain;
+		}
+	}
+
+	@media screen and (min-width:@desktopSize){
+		display: none;
+	}
+}

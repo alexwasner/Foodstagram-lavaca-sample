@@ -1,0 +1,95 @@
+@red:#D04B4B;
+@headerHeight:44px;
+@tabHeight:40px;
+
+@desktopSize:650px;
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+  color: #00a3de;
+}
+
+html {
+  font-size: 14px;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #e8ebed;
+  position: relative;
+}
+
+header.view{
+	.absolute(0,0, intial, 0);
+	z-index:100;
+	height:@headerHeight;
+	background: @red;
+	display: flex;
+	align-items:center;
+	.back{
+		position: absolute;
+		left:0;
+		bottom:0;
+		top:0;
+		color:white;
+		padding: 0 1.5rem;
+		background: transparent;
+		outline: 0;
+	}
+	.logo{
+		height:2rem;
+		width:100%;
+		background:url('../assets/img/logo.svg') center center no-repeat;
+		background-size:contain;
+	}
+}
+
+.view {
+  background: #fff;
+}
+
+.profile-image{
+	display:block;
+	border-radius: 100%;
+	width:2rem;
+	height:2rem;
+	background:#eee center center no-repeat;
+	background-size:cover;
+	&.lg{
+		height:4rem;
+		width:4rem;
+	}
+}
+
+.like{
+	background:url('../assets/img/like.svg') center center no-repeat;
+	background-size:contain;
+	display: inline-block;
+	&[data-liked]{
+		background:url('../assets/img/like-filled.svg') center center no-repeat;
+		background-size:contain;
+		&.sm{
+			width:0.8rem;
+			height:0.8rem;
+		}
+	}
+}
+.share{
+	background:url('../assets/img/share.svg') center center no-repeat;
+	background-size:contain;
+}
+.ios body{
+ #view-root{
+ 	top:22px;
+ }
+ &:before{
+ 	content:'';
+ 	height:22px;
+ 	position: absolute;
+ 	top:0;
+ 	left:0;
+ 	right:0;
+ 	background:@red;
+ }
+}

@@ -1,0 +1,10 @@
+.overflow-scroll {
+	overflow: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+.overflow-scroll > .overflow-scroll-inner {
+	/* some level of transform keeps elements from blinking out of visibility on iOS */
+  transform: rotateY(0);
+}
