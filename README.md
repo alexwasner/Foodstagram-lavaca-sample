@@ -4,7 +4,7 @@ This is an Instagram style demo app built with Lavaca V4 utilizing Grunt, webpac
 
 [Startup guide](http://getlavaca.com/#/guide)
 
-![alt tag](https://raw.githubusercontent.com/alexwasner/Foodstagram-lavaca-sample/master/foodstagram.png)
+![alt tag](https://raw.githubusercontent.com/alexwasner/Foodstagram-lavaca-sample/master/foodstagram.png?v1)
 
 ```bash
 $ cd [step # goes here]
