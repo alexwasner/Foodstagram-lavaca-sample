@@ -1,0 +1,30 @@
+<div class="overflow-scroll">
+	<div class="overflow-scroll-inner">
+		<section class="upper-area">
+			<div class="user">
+				<div class="profile-image lg" style="background-image: url({profileImage})"></div>
+			</div>
+
+			<h1>{firstName} {lastName}</h1>
+			<div class="stats">
+				<div class="posts">
+					<span>{posts.length}</span>
+					<h2>Images</h2>
+				</div>
+				<div class="followers">
+					<span>{followers}</span>
+					<h2>Follwers</h2>
+				</div>
+				<div class="following">
+					<span>{following}</span>
+					<h2>Follwing</h2>
+				</div>
+			</div>
+		</section>
+		<section class="images">
+			{#posts}
+				<div class="food-image" style="background-image: url({.imageUrl})" data-index={$idx} data-id={id}></div>
+			{/posts}
+		</section>
+	</div>
+</div>{@contextDump key="current" to="console"/}
