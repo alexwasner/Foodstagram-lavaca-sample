@@ -1,9 +1,19 @@
 import { View } from 'lavaca';
 import template from 'templates/FoodView';
 
-export let FoodView = View.extend(function FoodView() {
-  View.apply(this,arguments);
+/**
+ * @class app.ui.views.FoodView
+ * @super lavaca.mvc.View
+ * FoodView view type
+ */
+export let FoodView = View.extend(function FoodView(){
+  View.apply(this, arguments);
 },{
+  /**
+  * @field {String} className
+  * @default 'food'
+  * A class name added to the view container
+  */
   className: 'food',
   generateHtml(model) {
     return new Promise((resolve) => {
@@ -12,4 +22,6 @@ export let FoodView = View.extend(function FoodView() {
       });
     });
   }
+
+
 });
