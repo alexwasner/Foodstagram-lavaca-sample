@@ -31,7 +31,7 @@ export let FoodView = View.extend(function FoodView() {
         let model = typeof this.model.length == 'undefined' ? this.model : this.model[index];
         model.$set({
           'liked':true,
-          likes:this.model[index].likes ? this.model[index].likes++ : 1
+          likes:this.model[index].likes ? ++this.model[index].likes : 1
         });
   		}catch(e){}
   	}
