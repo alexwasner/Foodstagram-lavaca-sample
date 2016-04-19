@@ -1,30 +1,20 @@
-import { View, Router } from 'lavaca';
-import {merge} from 'mout/object';
+import { View } from 'lavaca';
 import template from 'templates/ProfileView';
-import {StateModel} from 'app/models/StateModel';
 
-export let ProfileView = View.extend(function ProfileView() {
-  View.apply(this,arguments);
-  this.mapEvent({
-  	'.food-image':{
-  		'tap':this.onTapFood
-  	},
-    model:{
-      'newImage':this.newImage
-    }
-  })
+/**
+ * @class app.ui.views.ProfileView
+ * @super lavaca.mvc.View
+ * ProfileView view type
+ */
+export let ProfileView = View.extend(function ProfileView(){
+  View.apply(this, arguments);
 },{
+  /**
+  * @field {String} className
+  * @default 'profile'
+  * A class name added to the view container
+  */
   className: 'profile',
-  newImage(){
-    this.render('.images');
-  },
-  onTapFood(e){
-    if(this.model.posts && e.currentTarget.dataset.index){
-      let model = merge({user:this.model}, this.model.posts[e.currentTarget.dataset.index]);
-      StateModel.offsets[StateModel.currentTabView] = this.el.find('.overflow-scroll').scrollTop();
-    	Router.exec('/food/'+e.currentTarget.dataset.id, {model:model})
-    }
-  },
   generateHtml(model) {
     return new Promise((resolve) => {
       template(model, (err, html) => {
@@ -32,4 +22,6 @@ export let ProfileView = View.extend(function ProfileView() {
       });
     });
   }
+
+
 });
