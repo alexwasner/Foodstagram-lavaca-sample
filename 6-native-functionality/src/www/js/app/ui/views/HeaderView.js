@@ -1,18 +1,10 @@
-import { View, History } from 'lavaca';
+import { View } from 'lavaca';
 import template from 'templates/HeaderView';
 
-export let HeaderView = View.extend(function HeaderView() {
-  View.apply(this,arguments);
-  this.mapEvent({
-  	'.back':{
-  		'tap':this.back
-  	}
-  })
+export let HeaderView = View.extend(function HeaderView(){
+  View.apply(this, arguments);
 },{
   className: 'header',
-  back(e){
-    History.back();
-  },
   generateHtml(model) {
     return new Promise((resolve) => {
       template(model, (err, html) => {
@@ -20,4 +12,6 @@ export let HeaderView = View.extend(function HeaderView() {
       });
     });
   }
+
+
 });
