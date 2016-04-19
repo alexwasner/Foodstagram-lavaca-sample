@@ -1,8 +1,36 @@
 <header id="header-view"></header>
-<div id="views"></div>
+<div id="views" class="food view">
+	<div class="overflow-scroll">
+		<div class="overflow-scroll-inner">
+			{#.}
+				<section class="food-wrapper" data-index="{$idx}">
+					<div class="user">
+						<div class="profile-image" style="background-image: url({user.profileImage}"></div>
+						<h1>{user.username}</h1>
+					</div>
+					<div class="image" data-index="{$idx}">
+						<img src="{imageUrl}"/>
+					</div>
+					<div class="comments">
+						<div class="connect">
+							<i class="icon like" {?liked}data-liked{/liked}></i>
+							<i class="icon share"></i>
+						</div>
+						<span class="likes">
+							<i class="filled like sm"></i> <span>{likes} likes</span>
+						</span>
+						<div class="comment">
+							<span class="username">{user.username}</span> {comment}
+						</div>
+					</div>
+				</section>
+			{/.}
+		</div>
+	</div>
+</div>
 
 <div class="tabbar">
-	<div class="tab-item" data-item="food"><i></i></div>
-	<div class="tab-item" data-item="camera"><i></i></div>
-	<div class="tab-item" data-item="profile"><i></i></div>
+	<div class="tab-item"></div>
+	<div class="tab-item"></div>
+	<div class="tab-item"></div>
 </div>
