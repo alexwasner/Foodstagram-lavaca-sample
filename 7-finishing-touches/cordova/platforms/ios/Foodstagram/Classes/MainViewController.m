@@ -84,6 +84,10 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -98,10 +102,6 @@
     return[super newCordovaViewWithFrame:bounds];
 }
 */
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
 
 @end
 

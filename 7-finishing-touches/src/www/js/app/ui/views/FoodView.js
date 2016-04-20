@@ -1,55 +1,51 @@
 import { View } from 'lavaca';
-import {get} from 'mout/object';
 import template from 'templates/FoodView';
 
-export let FoodView = View.extend(function FoodView() {
-  View.apply(this,arguments);
+export let FoodView = View.extend(function FoodView(){
+  View.apply(this, arguments);
 
   this.mapEvent({
-    '.image':{
-      'tap':this.like
-    },
-    model:{
-    	'change':this.onModelChange,
-      'newImage':this.newImage
-    }
+  	'.food-wrapper .image':{
+  		'tap':this.like
+  	},
+  	model:{
+  		'change':this.onModelChange,
+      'newImage':this.onNewImage
+  	}
   });
 },{
   className: 'food',
-  newImage(){
-    this.render();
-  },
   like(e){
-  	if(this.singleTapped === e.currentTarget.dataset.index){
-      let index = e.currentTarget.dataset.index == "" ? 0 : e.currentTarget.dataset.index;
-  		try{
-	  		this.singleTapped = null;
-	  		$(e.currentTarget).nextAnimationEnd(()=>{
-		  		$(e.currentTarget).removeClass('liked');
-	  		});
-		  	$(e.currentTarget).addClass('liked');
-        let model = typeof this.model.length == 'undefined' ? this.model : this.model[index];
-        model.$set({
-          'liked':true,
-          likes:this.model[index].likes ? this.model[index].likes++ : 1
-        });
-  		}catch(e){}
+  	let index = e.currentTarget.dataset.index;
+  	if(this.singleTapped === index){
+  		//do something here
+  		console.warn('liked');
+  		this.singleTapped = null;
+  		$(e.currentTarget).nextAnimationEnd(()=>{
+  			$(e.currentTarget).removeClass('liked');
+  		});
+  		$(e.currentTarget).addClass('liked');
+  		this.model[index].$set({
+  			liked:true,
+  			likes:this.model[index].likes ? ++this.model[index].likes : 1
+  		});
   	}
   	else{
-  		this.singleTapped = e.currentTarget.dataset.index;
-  		setTimeout(()=>{this.singleTapped = null}, 250);
+	  	this.singleTapped = e.currentTarget.dataset.index;
+	  	setTimeout(()=>{this.singleTapped = null;},250);
   	}
   },
+  onNewImage(){
+    this.render();
+  },
   onModelChange(change){
-    let csv = [];
-    change.forEach((e,i)=>{
-      if(e.path && e.path.length > 1 && e.path[1] == 'liked'){
-        csv.push('.food-wrapper[data-index='+e.path[0]+'] .comments');
-      }
-    });
-    if(csv.length){
-  	 this.render(csv.join(', '));
-    }
+  	let csv = [];
+  	change.forEach((e,i)=>{
+  		if(e.path && e.path.length > 1 && e.path[1] == 'liked'){
+  			csv.push('.food-wrapper[data-index='+e.path[0]+'] .comments');
+  		}
+  	});
+  	this.render(csv.join(', '));
   },
   generateHtml(model) {
     return new Promise((resolve) => {
@@ -58,4 +54,6 @@ export let FoodView = View.extend(function FoodView() {
       });
     });
   }
+
+
 });

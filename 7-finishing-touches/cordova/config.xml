@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?><widget id="com.mm.foodstagram" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" ios-CFBundleVersion="1461016687" android-versionCode="61016687">
+<?xml version='1.0' encoding='utf-8'?><widget id="com.mm.foodstagram" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" ios-CFBundleVersion="1461110488" android-versionCode="61110488">
     <name>Foodstagram</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -22,6 +22,4 @@
         <allow-intent href="itms:*"/>
         <allow-intent href="itms-apps:*"/>
     </platform>
-    <preference name="DisallowOverscroll" value="true"/>
-    <preference name="webviewbounce" value="false"/>
 </widget>
