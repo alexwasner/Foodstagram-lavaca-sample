@@ -21,7 +21,7 @@ export let SwipeHistoryBackManager = Disposable.extend(function SwipeHistoryBack
     this.startX = this.lastX;
     this.isTracking = this.lastX < this.leftThreshold && 
                       (viewManager.breadcrumb.length > 1) && 
-                      window.Modernizr['ios'];
+                      window.Modernizr['ios-installed'];
 
     if (this.isTracking) {
 
