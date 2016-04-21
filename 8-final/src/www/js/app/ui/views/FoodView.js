@@ -29,10 +29,12 @@ export let FoodView = View.extend(function FoodView() {
 	  		});
 		  	$(e.currentTarget).addClass('liked');
         let model = typeof this.model.length == 'undefined' ? this.model : this.model[index];
-        model.$set({
-          'liked':true,
-          likes:this.model[index].likes ? ++this.model[index].likes : 1
-        });
+        if(!model.liked){
+          model.$set({
+            'liked':true,
+            likes:this.model[index].likes ? ++this.model[index].likes : 1
+          });
+        }
   		}catch(e){}
   	}
   	else{
