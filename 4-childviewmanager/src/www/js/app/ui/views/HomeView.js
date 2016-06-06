@@ -42,7 +42,6 @@ export let HomeView = View.extend(function HomeView() {
   			csv.push('.food-wrapper[data-index='+e.path[0]+'] .comments');
   		}
   	});
-  	this.render();
   	this.render(csv.join(', '));
   },
   generateHtml(model) {
