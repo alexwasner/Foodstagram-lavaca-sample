@@ -24,7 +24,7 @@ export let FoodView = View.extend(function FoodView(){
   			$(e.currentTarget).removeClass('liked');
   		});
   		$(e.currentTarget).addClass('liked');
-      if(!model.liked){
+      if(! this.model.liked){
     		this.model[index].$set({
     			liked:true,
     			likes:this.model[index].likes ? ++this.model[index].likes : 1
